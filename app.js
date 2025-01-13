@@ -7,7 +7,7 @@ Deno.serve({
         if (request.url === '/') {
             file = await Deno.open('./index.html', { read: true });
         } else {
-            file = await Deno.open(`${request.url}`, { read: true });
+            
         }
 
         return new Response(file.readable);
