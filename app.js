@@ -1,13 +1,15 @@
 Deno.serve({
     port: 443,
     handler: async (request) => {
-        console.log(request.url);
+        const path = request.url.split('/');
+        const file_name = path[path.length - 1];
+        console.log(file_name);
 
         let file = '';
-        if (request.url === '/') {
+        if (file_name === '') {
             file = await Deno.open('./index.html', { read: true });
         } else {
-            
+            file = await Deno.open(`./${file_name}`, { read: true });
         }
 
         return new Response(file.readable);
