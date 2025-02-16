@@ -77,7 +77,8 @@
 
 
         // WebSocket 接続を作成
-        const socket = new WebSocket("ws://localhost:4321");
+        //const socket = new WebSocket("ws://localhost:4321");
+        const socket = new WebSocket("wss://lem-maicosmonaut.deno.dev/");
 
         // 接続が開いたときのイベント
         socket.addEventListener("open", (event) => {
