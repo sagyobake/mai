@@ -8,54 +8,76 @@
 
     <style>
         body {
-            height: 100dvmin;
-            display: grid;
-            place-items: center;
+            text-align: center;
+        }
 
-            color: #FFBEDA;
+        h1 {
+            color: #FF99FF;
         }
 
         a,
         a:visited {
-            width: 60dvmin;
-            margin: 10dvmin;
-            text-align: center;
-
+            z-index: 5;
             font-size: 5dvmin;
-
-            padding: 8dvmin;
-            border-radius: 4dvmin;
-
             color: gray;
-            display: block;
-            background-color: #FFBEDA;
-
             text-decoration: none;
+        }
 
+        #twitter {
+            z-index: 10;
+            color: black;
+            display: block;
+            margin-top: 20dvmax;
+            margin-bottom: 36dvmax;
+        }
+
+        #instagram {
+            z-index: 10;
+            display: block;
+            color: black;
+        }
+
+        #heart {
+            z-index: 20;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>マイメロ</h1>
+        <h1>Mai</h1>
     </header>
 
     <main>
+        <div id="heart"></div>
 
-        <a href="https://x.com/Watanabe0822200">X (Twitter)</a>
+        <a id="twitter" href="https://x.com/Watanabe0822200">X (Twitter)</a>
 
-        <a
-            href="https://www.instagram.com/42251935maimai?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+        <br>
+        <a id='instagram'
+            href="https://www.instagram.com/42251935maimai?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram
+        </a>
 
     </main>
 
 
     <script>
-        // WebSocket 接続を作成
-        const socket = new WebSocket("wss://mymelo.deno.dev/");
-        //const socket = new WebSocket("ws://localhost:8000");
+        const heart = document.getElementById('heart');
 
+        const heartGenerator = (x_position, y_position, x, y) => {
+            const div = document.createElement('div');
+            div.style.width = '1px';
+            div.style.height = '1px';
+            div.style.backgroundColor = '#FFBEDA';
+            div.style.position = 'absolute';
+            div.style.right = `${x_position + x * 30}dvmin`;
+            div.style.bottom = `${y_position + y * 30}dvmin`;
+            heart.appendChild(div);
+        }
+
+
+        // WebSocket 接続を作成
+        const socket = new WebSocket("ws://localhost:4321");
 
         // 接続が開いたときのイベント
         socket.addEventListener("open", (event) => {
@@ -64,10 +86,16 @@
 
         // メッセージの待ち受け
         socket.addEventListener("message", (event) => {
-            console.log("Message from server ", event.data);
+            const x = JSON.parse(event.data)['i'];
+            const y = JSON.parse(event.data)['j'];
+
+            console.log(x);
+            console.log(y);
+
+            heartGenerator(50, 120, x, y);
+            heartGenerator(50, 40, x, y);
+
         });
-
-
 
     </script>
 </body>
