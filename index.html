@@ -8,7 +8,7 @@
 
     <style>
         body {
-            height: 100dvw;
+            height: 100dvmin;
             display: grid;
             place-items: center;
 
@@ -18,14 +18,14 @@
 
         a,
         a:visited {
-            width: 60dvw;
-            margin: 10dvw;
+            width: 60dvmin;
+            margin: 10dvmin;
             text-align: center;
 
-            font-size: 5dvw;
+            font-size: 5dvmin;
 
-            padding: 8dvw;
-            border-radius: 4dvw;
+            padding: 8dvmin;
+            border-radius: 4dvmin;
 
             color: gray;
             display: block;
@@ -54,8 +54,8 @@
 
     <script>
         // WebSocket 接続を作成
-        //const socket = new WebSocket("wss://mymelo.deno.dev/");
-        const socket = new WebSocket("ws://localhost:8000");
+        const socket = new WebSocket("wss://mymelo.deno.dev/");
+        //const socket = new WebSocket("ws://localhost:8000");
 
 
         // 接続が開いたときのイベント
