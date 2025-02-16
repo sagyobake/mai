@@ -1,5 +1,5 @@
 Deno.serve(async (req) => {
-    
+
     const html = await Deno.readFile("./index.html");
 
     if (req.headers.get("upgrade") != "websocket") {
@@ -10,6 +10,7 @@ Deno.serve(async (req) => {
         console.log("a client connected!");
     });
     socket.addEventListener("message", (event) => {
+        socket.send('pong');
         if (event.data === "ping") {
             socket.send("pong");
         }
