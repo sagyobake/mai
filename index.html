@@ -12,8 +12,7 @@
             display: grid;
             place-items: center;
 
-            background-color: black;
-            color: darkgray;
+            color: #FFBEDA;
         }
 
         a,
@@ -29,7 +28,7 @@
 
             color: gray;
             display: block;
-            background-color: lightgray;
+            background-color: #FFBEDA;
 
             text-decoration: none;
 
@@ -54,8 +53,8 @@
 
     <script>
         // WebSocket 接続を作成
-        const socket = new WebSocket("wss://mymelo.deno.dev/");
-        //const socket = new WebSocket("ws://localhost:8000");
+        //const socket = new WebSocket("wss://mymelo.deno.dev/");
+        const socket = new WebSocket("ws://localhost:8000");
 
 
         // 接続が開いたときのイベント
@@ -67,6 +66,8 @@
         socket.addEventListener("message", (event) => {
             console.log("Message from server ", event.data);
         });
+
+
 
     </script>
 </body>
