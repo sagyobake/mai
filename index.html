@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイメロ</title>
+</head>
+
+<body>
+    <header>
+        <h1>マイメロ</h1>
+    </header>
+
+    <body>
+        <a>X</a>
+    </body>
+
+    <footer>
+        ©マイメロ
+    </footer>
+
+    <script>
+        // WebSocket 接続を作成
+        const socket = new WebSocket("ws://localhost:8000");
+
+        // 接続が開いたときのイベント
+        socket.addEventListener("open", (event) => {
+            socket.send("Hello Server!");
+        });
+
+        // メッセージの待ち受け
+        socket.addEventListener("message", (event) => {
+            console.log("Message from server ", event.data);
+        });
+
+    </script>
+</body>
+
+</html>
