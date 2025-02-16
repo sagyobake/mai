@@ -5,6 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>マイメロ</title>
+
+    <style>
+        body {
+            height: 100dvw;
+            display: grid;
+            place-items: center;
+
+            background-color: black;
+            color: darkgray;
+        }
+
+        a,
+        a:visited {
+            width: 60dvw;
+            margin: 10dvw;
+            text-align: center;
+
+            font-size: 5dvw;
+
+            padding: 8dvw;
+            border-radius: 4dvw;
+
+            color: gray;
+            display: block;
+            background-color: lightgray;
+
+            text-decoration: none;
+
+        }
+    </style>
 </head>
 
 <body>
@@ -12,19 +42,20 @@
         <h1>マイメロ</h1>
     </header>
 
-    <body>
-        <a>X</a>
-    </body>
+    <main>
 
-    <footer>
-        ©マイメロ
-    </footer>
+        <a href="https://x.com/Watanabe0822200">X (Twitter)</a>
+
+        <a
+            href="https://www.instagram.com/42251935maimai?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+
+    </main>
+
 
     <script>
-
-        //const socket = new WebSocket("ws://localhost:8000");
         // WebSocket 接続を作成
-        const socket = new WebSocket("wss://mymelo.deno.dev/");
+        //const socket = new WebSocket("wss://mymelo.deno.dev/");
+        const socket = new WebSocket("ws://localhost:8000");
 
 
         // 接続が開いたときのイベント
