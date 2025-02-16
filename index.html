@@ -17,29 +17,23 @@
 
         a,
         a:visited {
-            z-index: 5;
             font-size: 5dvmin;
             color: gray;
             text-decoration: none;
         }
 
         #twitter {
-            z-index: 10;
             color: black;
             display: block;
-            margin-top: 20dvmax;
-            margin-bottom: 36dvmax;
+            margin-top: 40dvh;
+            margin-bottom: 30dvh;
         }
 
         #instagram {
-            z-index: 10;
             display: block;
             color: black;
         }
 
-        #heart {
-            z-index: 20;
-        }
     </style>
 </head>
 
@@ -93,8 +87,8 @@
             console.log(x);
             console.log(y);
 
-            heartGenerator(50, 120, x, y);
-            heartGenerator(50, 40, x, y);
+            heartGenerator(50, 100, x, y);
+            heartGenerator(50, 30, x, y);
 
         });
 
