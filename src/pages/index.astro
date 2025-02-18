@@ -1,11 +1,66 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+//コメントアウトは---で囲う必要があるぞ
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイメロ</title>
+
+    <style>
+        article {
+            position: absolute;
+            bottom: 0dvh;
+            margin: 2dvh;
+        }
+
+        p {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="heart"></p>
+
+    <header>
+        <h1>Mai</h1>
+    </header>
+
+    <main>
+        <article>
+            <div>
+                <a class="twitter" href="https://x.com/4831338_">X (Twitter)</a>
+            </div>
+
+            <div>
+                <a class='instagram'
+                    href="https://www.instagram.com/42251935maimai?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                    Instagram <i>42251935maimai</i>
+                </a>
+            </div>
+
+            <div>
+                <a class='instagram'
+                    href="https://www.instagram.com/boc_mai1024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                    Instagram <i>boc_mai1024</i>
+                </a>
+            </div>
+        </article>
+
+        <div id="heart"></div>
+
+    </main>
+
+
+    <script>
+    </script>
+</body>
+
+</html>
